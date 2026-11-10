@@ -20,9 +20,13 @@ Muse の週間使用量（％）とリセット日時を、Android のホーム�
      `リセット $wg("https://raw.githubusercontent.com/mi7780606/muse-usage/main/usage.json", json, .reset_text)$`
    - 最終更新:
      `更新 $wg("https://raw.githubusercontent.com/mi7780606/muse-usage/main/usage.json", json, .updated_text)$`
-5. 進捗バーで使用率を見せたい場合は「プログレスバー」を追加し、「プログレス」欄の式に
-   `$wg("https://raw.githubusercontent.com/mi7780606/muse-usage/main/usage.json", json, .used_percent)$`
-   を入れ、最大値を 100 にします。
+5. 進捗バーで使用率を見せたい場合は「プログレス」アイテムを追加し、次の順で設定します（「式を入れる欄」は最初は出ていません）。
+   1. プログレスの設定で「モード」（種類）を **カスタム** に変える（初期状態ではバッテリー等の固定項目しか選べません）
+   2. すると「レベル」という項目が現れるので、その右側のチェックボックスを ON にする
+   3. 画面上部に現れる **電卓アイコン** をタップする（数式モードへの切り替え）
+   4. 「レベル」をタップすると数式入力画面が開くので、この式を入れる:
+      `$wg("https://raw.githubusercontent.com/mi7780606/muse-usage/main/usage.json", json, .used_percent)$`
+   5. 最小（Min）を 0、最大（Max）を 100 にする
 6. 右上の保存アイコンで保存して、ホーム画面に戻ります。
 7. KWGT の設定で「ウィジェットの更新間隔」を短め（例：15分〜30分）にすると、表示が新しく保たれます。
 
